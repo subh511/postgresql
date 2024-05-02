@@ -1,20 +1,22 @@
+
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
 async function main() {
-  // ... you will write your Prisma Client queries here
-  await prisma.user.create({
-    data:{
-        email:"samrat@gmail.com",
-        name: "Samrat doe"
+  await prisma.post.create({
+    data: {
+     title: "title of post",
+     content: "test content",
+     published: true,
+     authorId:1
     }
   })
 }
 
 main()
 //   .then(async () => {
-//     console.log("done with the query!")
+//     console.log("done");
 //     await prisma.$disconnect()
 //   })
 //   .catch(async (e) => {
